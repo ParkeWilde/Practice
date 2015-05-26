@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+// Simple Scatter Plot with Invented CSV Data
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+
+   <style>
+    circle.dimple-bubble {
+      fill: red;
+    }
+    </style>
+    <script type="text/javascript">
+      function myDraw(data) {
+      
+      /*
+        D3.js setup code
+      */
+
+          "use strict";
+          var margin = 75,
+              width = 600 - margin,
+              height = 600 - margin;
+
+          var svg = d3.select("body")
+            .append("svg")
+              .attr("width", width + margin)
+              .attr("height", height + margin)
+            .append('g')
+                .attr('class','chart');
+
+      /*
+        Dimple.js Chart construction code
+      */
+
+          var myChart = new dimple.chart(svg, data);
+          var x = myChart.addMeasureAxis("x", "monthIncome"); 
+          myChart.addMeasureAxis("y", "foodSpending");
+          myChart.addSeries(["Obs", "foodSpending", "monthIncome", "uHat"], dimple.plot.scatter);
+          myChart.draw();
+        };
+      </script>
+  */
+</head>
+<body>
+<script type="text/javascript">
+  d3.tsv("SpendingData.tsv", myDraw);
+</script>
+
+</body>
+</html>
