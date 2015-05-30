@@ -45,7 +45,7 @@
 </head>
 <body>
 <script type="text/javascript">
-  d3.tsv("https://rawgit.com/ParkeWilde/Practice/master/SpendingData.tsv", myDraw);
+  d3.tsv("SpendingData.tsv", myDraw);
 </script>
 
 </body>
